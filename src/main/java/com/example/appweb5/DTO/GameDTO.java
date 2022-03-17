@@ -37,4 +37,5 @@ public class GameDTO {
     public void setDescripcionJuego(String descripcionJuego) {
         this.descripcionJuego = descripcionJuego;
     }
+
 }

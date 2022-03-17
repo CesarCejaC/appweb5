@@ -1,10 +1,13 @@
 package com.example.appweb5.controller;
 
 import com.example.appweb5.DTO.GameDTO;
+import com.example.appweb5.DTO.ReviewDTO;
 import com.example.appweb5.DTO.UserDTO;
 import com.example.appweb5.exception.BusinessException;
+import com.example.appweb5.model.Review;
 import com.example.appweb5.service.ApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,15 +31,10 @@ public class ApplicationController {
     @GetMapping("")
     public String inicio(){return applicationService.firstService();}
 
-    @GetMapping("/saveuser")
-    public UserDTO saveUSer() throws IOException{
-        return applicationService.saveUser();
-
-    }
-
-    @GetMapping("/getGames")
-    public GameDTO getGames() throws IOException{
-        return applicationService.getGames();
+    @RequestMapping(value = "/newReview", method = RequestMethod.POST)
+    public ResponseEntity<Review> newReview(@RequestBody Review review){
+        Review review1 = applicationService.newReview(review);
+        return new ResponseEntity(review1, HttpStatus.CREATED);
     }
 
 }
