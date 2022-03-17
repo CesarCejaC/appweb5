@@ -15,5 +15,12 @@ public interface ApplicationService {
 
     String firstService();
 
+    //guardar reseña desde json
     Review newReview(Review review);
+
+    //obtener reseñas
+    List<Review> listReviews();
+
+    //Obtener games
+    List<Game> listGames();
 }
