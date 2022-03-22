@@ -9,8 +9,7 @@ public class User {
     public User() {
     }
 
-    public User(long id, String nombre_usuario, String email_usuario, String password_usuario, int tipo_usuario) {
-        this.id = id;
+    public User(String nombre_usuario, String email_usuario, String password_usuario, int tipo_usuario) {
         this.nombre_usuario = nombre_usuario;
         this.email_usuario = email_usuario;
         this.password_usuario = password_usuario;
@@ -18,10 +17,6 @@ public class User {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_usuario", nullable = false)
-    private Long id;
-
     @Column(name = "nombre_usuario", nullable = false)
     private String nombre_usuario;
 
@@ -33,14 +28,6 @@ public class User {
 
     @Column(name = "tipo_usuario", nullable = false )
     private Integer tipo_usuario;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getNombre_usuario() {
         return nombre_usuario;

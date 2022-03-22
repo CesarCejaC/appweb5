@@ -2,18 +2,18 @@ package com.example.appweb5.DTO;
 
 public class ReviewDTO {
     private Long id;
-    private Long id_usuario;
-    private Long id_juego;
+    private String nombre_usuario;
+    private String nombre_juego;
     private Integer calificacion;
     private String descripcion;
 
     public ReviewDTO() {
     }
 
-    public ReviewDTO(Long id, Long id_usuario, Long id_juego, Integer calificacion, String descripcion) {
+    public ReviewDTO(Long id, String nombre_usuario, String nombre_juego, Integer calificacion, String descripcion) {
         this.id = id;
-        this.id_usuario = id_usuario;
-        this.id_juego = id_juego;
+        this.nombre_usuario = nombre_usuario;
+        this.nombre_juego = nombre_juego;
         this.calificacion = calificacion;
         this.descripcion = descripcion;
     }
@@ -26,20 +26,20 @@ public class ReviewDTO {
         this.id = id;
     }
 
-    public Long getId_usuario() {
-        return id_usuario;
+    public String getNombre_usuario() {
+        return nombre_usuario;
     }
 
-    public void setId_usuario(Long id_usuario) {
-        this.id_usuario = id_usuario;
+    public void setNombre_usuario(String nombre_usuario) {
+        this.nombre_usuario = nombre_usuario;
     }
 
-    public Long getId_juego() {
-        return id_juego;
+    public String getNombre_juego() {
+        return nombre_juego;
     }
 
-    public void setId_juego(Long id_juego) {
-        this.id_juego = id_juego;
+    public void setNombre_juego(String nombre_juego) {
+        this.nombre_juego = nombre_juego;
     }
 
     public Integer getCalificacion() {
