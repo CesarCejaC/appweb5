@@ -11,6 +11,7 @@ import com.example.appweb5.service.ApplicationService;
 import com.example.appweb5.service.HttpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,12 +31,12 @@ public class ApplicationServiceImpl implements ApplicationService {
 
     @Override
     public String firstService() {
-        return "Bienvenido";
+        return "La conexión funciona";
     }
 
     //guardar reseña desde json
     @Override
-    public Review newReview(Review review){
+    public Review newReview(Review review) {
         return reviewRepository.save(review);
     }
 

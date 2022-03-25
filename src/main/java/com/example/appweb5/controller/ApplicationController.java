@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api/v1",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/api/v1")
 public class ApplicationController {
 
     @Autowired
@@ -41,6 +41,7 @@ public class ApplicationController {
     }
 
     //get reviews
+    @CrossOrigin(origins = "http://localhost:4200/")
     @GetMapping("/getReviews")
     public ResponseEntity<Review> listReviews() {
         List<Review> reviews = applicationService.listReviews();
