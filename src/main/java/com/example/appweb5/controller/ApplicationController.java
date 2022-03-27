@@ -33,12 +33,16 @@ public class ApplicationController {
     @GetMapping("")
     public String inicio(){return applicationService.firstService();}
 
+
+
     //crear reseña desde json
+    @CrossOrigin(origins = "http://localhost:4200/")
     @RequestMapping(value = "/newReview", method = RequestMethod.POST)
     public ResponseEntity<Review> newReview(@RequestBody Review review){
         Review review1 = applicationService.newReview(review);
         return new ResponseEntity(review1, HttpStatus.CREATED);
     }
+
 
     //get reviews
     @CrossOrigin(origins = "http://localhost:4200/")
